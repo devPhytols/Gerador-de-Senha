@@ -36,14 +36,19 @@ function GerarSenha() {
 }
 
 async function Copiar() {
-    let copiartexto = document.getElementById("resultado")
+    let copiarTexto = document.getElementById("resultado");
 
-    copiartexto.select();
+    if (copiarTexto.value == '') {
+        alert('Não existe texto para copiar')
+    } else {
 
-    navigator.clipboard.writeText(copiartexto.value);
-    copiartexto.value = 'Texto Copiado!';
+        copiarTexto.select();
 
-    setTimeout(function () {
-        copiartexto.value = '';
-    }, 1000)
+        navigator.clipboard.writeText(copiarTexto.value);
+        copiarTexto.value = 'Texto Copiado!';
+
+        setTimeout(function () {
+            copiarTexto.value = '';
+        }, 1000)
+    }
 }
