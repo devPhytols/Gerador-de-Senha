@@ -15,6 +15,10 @@
     <div class="container">
         <div class="box-gerar">
             <input type="text" name="resultado" id="resultado" placeholder="Aguardando..." disabled>
+            <div class="checkboxes">
+                <label><input type="checkbox" onclick="AtivarNumeros()"> <span>Numeros</span></label>
+                <label><input type="checkbox" onclick="AtivarCaracteres()"> <span>Caracteres</span></label>
+            </div>
             <a href="#" onclick="GerarSenha()" id="gerar"><i class="fa-solid fa-cube"></i> Gerar Senha</a>
             <a href="#" onclick="Copiar()" id="copiar"><i class="fa-solid fa-copy"></i> Copiar Senha</a>
         </div>

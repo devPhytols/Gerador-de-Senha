@@ -21,6 +21,25 @@ body {
     width: 100%;
 }
 
+.checkboxes {
+    margin-left: 30px;
+    text-align: center;
+    font-size: 12px;
+}
+.checkboxes label {
+    margin-top: 20px;
+    color: #FFF;
+    display: inline-block;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+  .checkboxes input {
+    vertical-align: middle;
+  }
+  .checkboxes label span {
+    vertical-align: middle;
+  }
+
 .box-gerar {
     width: 300px;
 }

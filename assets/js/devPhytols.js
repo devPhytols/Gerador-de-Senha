@@ -1,8 +1,29 @@
 const exibirResposta = document.querySelector("#resultado")
 const perguntarBtn = document.querySelector("#gerar")
 
+const maisculasMinusculas = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+let Numeros = '';
+const letrasNumeros = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+let caracteresEspeciais = '';
+
+function AtivarNumeros() {
+    if (Numeros == '0123456789') {
+        Numeros = ''
+    } else {
+        Numeros = '0123456789'
+    }
+}
+
+function AtivarCaracteres() {
+    if (caracteresEspeciais == '{}][^-_()!@#$%&*=+?><') {
+        caracteresEspeciais = '';
+    } else {
+        caracteresEspeciais = '{}][^-_()!@#$%&*=+?><';
+    }
+}
+
 function GerarSenha() {
-    var valores = ["ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", "0123456789", "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", "{}][^-_()!@#$%&*=+?><"];
+    var valores = [maisculasMinusculas, Numeros, letrasNumeros, caracteresEspeciais];
     var senhaAleatoria = [5, 3, 2, 3].map(function (len, i) {
         return Array(len).fill(valores[i]).map(function (x) {
             return x[Math.floor(Math.random() * x.length)]
@@ -21,7 +42,7 @@ async function Copiar() {
 
     navigator.clipboard.writeText(copiartexto.value);
     copiartexto.value = 'Texto Copiado!';
-    
+
     setTimeout(function () {
         copiartexto.value = '';
     }, 1000)
